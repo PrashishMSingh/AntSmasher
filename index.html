@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Ant Smasher</title>
+  <link rel = 'stylesheet' href = './css/reset.css'/>
+  <link rel = 'stylesheet' href = './css/layout.css'/>
+  <link rel = 'stylesheet' href = './css/style.css'/>
+</head>
+<body>
+  <div id = "gameContainer" class = "main-container">
+    <div class = "gameOverWrapper">
+      <div class = "title">
+        Ant Smasher
+      </div>
+
+      <div class = "nextWrapper">
+        <div class = "selectLevel">
+          Level :
+          <select class = "level">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+          </select>
+        </div>
+        <button class = "nextBtn">Next</button>
+      </div>
+    </div>
+    <ul class = 'pointsWrapper'>
+      <li>Points : </li>
+      <li><span class = 'antSmashCount'></span></li>
+      <li>Missed : </li>
+      <li><span class = "missCount"></span></li>
+      <li>Wasp Count : </li>
+      <li><span class = "waspCount"></span></li>
+    </ul>
+
+  </div>
+  <script src = "./js/bug.js"></script>
+  <script src = "./js/smasherController.js"></script>
+
+</body>
+</html>
