@@ -41,7 +41,6 @@ function SmasherController(containerId, CONTAINER_WIDTH, CONTAINER_HEIGHT){
           this.containerElement.removeChild(ants[j])
       }
     }
-
   }
 
   this.endGame = function(){
@@ -102,10 +101,10 @@ function SmasherController(containerId, CONTAINER_WIDTH, CONTAINER_HEIGHT){
 
 
   this.incrementMiss = (function(bug){
+    this.removeBug(bug)
     if(bug.bugType === 'ant'){
       this.missCount ++;
       this.missedElement.innerHTML = this.missCount
-      this.removeBug(bug)
       this.containerElement.style.backgroundColor = 'red'
       if(this.missCount >= 3){
         this.gameOver = true;
@@ -136,10 +135,9 @@ function SmasherController(containerId, CONTAINER_WIDTH, CONTAINER_HEIGHT){
 
   this.createBugs = function(){
     var bugsNo = 0;
-    var bugCreationInterval = Math.floor(Math.random() * 3000)
+    var bugCreationInterval = 1000
 
     var createBug = setInterval((function(){
-      var maxLimit = 5;
       var count = this.difficulty
       if(!this.gameOver){
         if(this.bugList.length < count){
