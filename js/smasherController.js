@@ -18,7 +18,8 @@ function SmasherController(containerId, CONTAINER_WIDTH, CONTAINER_HEIGHT){
     this.gameOverContainer = this.containerElement.getElementsByClassName('gameOverWrapper')[0];
     this.levelSelector = this.gameOverContainer.getElementsByClassName('level')[0];
     this.nextBtn = this.gameOverContainer.getElementsByClassName('nextBtn')[0];
-    this.nextBtn.onclick = this.nextBtnAction;
+    this.nextBtn.addEventListener('click',this.nextBtnAction)
+
     this.pointElement = document.getElementsByClassName('antSmashCount')[0];
     this.pointElement.innerHTML = this.antSmashCount;
     this.missedElement = document.getElementsByClassName('missCount')[0];
@@ -194,6 +195,11 @@ function SmasherController(containerId, CONTAINER_WIDTH, CONTAINER_HEIGHT){
 var controller = new SmasherController('gameContainer', CONTAINER_WIDTH, CONTAINER_HEIGHT).init()
 controller.setDefaultContainerStyle()
 
-controller.getElement().onclick = function(e){
+controller.getElement().addEventListener('click', function(e){
   controller.incrementBugSmash(e.target)
-}
+})
+
+controller.getElement().addEventListener('mousedown', function(e){
+  console.log('mouse down')
+  controller.incrementBugSmash(e.target)
+})
