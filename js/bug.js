@@ -30,9 +30,10 @@ function Bug(xPos, yPos, xSpeed, ySpeed, bugType, bugSize, changeDirAt, CONTAINE
   }
 
   this.move=function(incrementMiss){
-    if((this.xPos + this.bugSize) >= this.CONTAINER_WIDTH){
+    var bugSize = parseInt(this.bugAbdomen.style.width)
+    if((this.xPos + bugSize) >= this.CONTAINER_WIDTH){
       this.xSpeed = -this.xSpeed;
-    }else if(this.xPos < 0){
+    }else if((this.xPos - bugSize) < 0){
       this.xSpeed = Math.abs(this.xSpeed)
     }
     var bugHeight = parseInt(this.bugHead.style.height) + parseInt(this.bugBody.style.height) + parseInt(this.bugAbdomen.style.height)

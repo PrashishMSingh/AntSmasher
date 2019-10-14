@@ -200,6 +200,5 @@ controller.getElement().addEventListener('click', function(e){
 })
 
 controller.getElement().addEventListener('mousedown', function(e){
-  console.log('mouse down')
   controller.incrementBugSmash(e.target)
 })
